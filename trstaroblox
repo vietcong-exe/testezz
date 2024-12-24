@@ -1,0 +1,36 @@
+local screenGui = Instance.new("ScreenGui")
+local frame = Instance.new("Frame")
+local openButton = Instance.new("TextButton")
+local closeButton = Instance.new("TextButton")
+
+-- Configurações da ScreenGui
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+-- Configurações do Frame
+frame.Size = UDim2.new(0.5, 0, 0.5, 0)
+frame.Position = UDim2.new(0.25, 0, 0.25, 0)
+frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+frame.Visible = false -- Começa como invisível
+frame.Parent = screenGui
+
+-- Configurações do Botão de Abrir
+openButton.Size = UDim2.new(0.2, 0, 0.1, 0)
+openButton.Position = UDim2.new(0.1, 0, 0.1, 0)
+openButton.Text = "Abrir Janela"
+openButton.Parent = screenGui
+
+-- Configurações do Botão de Fechar
+closeButton.Size = UDim2.new(0.2, 0, 0.1, 0)
+closeButton.Position = UDim2.new(0.1, 0, 0.5, 0)
+closeButton.Text = "Fechar Janela"
+closeButton.Parent = frame
+
+-- Função para abrir a janela
+openButton.MouseButton1Click:Connect(function()
+    frame.Visible = true
+end)
+
+-- Função para fechar a janela
+closeButton.MouseButton1Click:Connect(function()
+    frame.Visible = false
+end)
